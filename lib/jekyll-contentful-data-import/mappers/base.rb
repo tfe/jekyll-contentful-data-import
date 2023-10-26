@@ -34,7 +34,8 @@ module Jekyll
             'created_at' => entry.sys.fetch(:created_at, nil),
             'updated_at' => entry.sys.fetch(:updated_at, nil),
             'content_type_id' => content_type.nil? ? nil : content_type.id,
-            'revision' => entry.sys.fetch(:revision, nil)
+            'revision' => entry.sys.fetch(:revision, nil),
+            'tags' => entry._metadata.fetch(:tags, []).map(&:id),
           }
         end
 
